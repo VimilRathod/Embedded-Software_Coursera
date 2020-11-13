@@ -27,7 +27,9 @@
 #include "stats.h"
 
 /* Size of the Data Set */
-#define SIZE (40)
+#define SIZE 40
+
+int i;
 
 void main() {
 
@@ -38,43 +40,106 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
-  int i,j;
+  int S;
+  S = SIZE;
   /* Statistics and Printing Functions Go Here */
-  print_Statistics();
-  print_array();
-  find_median();
-  find_mean();
-  find_maximum();
-  find_minimum();
-  sort_array();
+  print_array(test, S);
+  printf("Analytical Statistics:\n");
+  print_statistics(test, S);
+  find_median(test, S);
+  find_mean(test, S);
+  find_maximum(test, S);
+  find_minimum(test, S);
+  sort_array(test, S);
+  printf("Given Dataset in Descending order:\n");
+  for (i=0;i<S;i++){
+  printf("%d\n",test[i]);
+}
 }
 
 /* Add other Implementation File Code Here */
 
-void print_statistics(int * ptr, int count){
-;
+void print_statistics(unsigned char test[], int S){
+int med, mn, max, min;
+med = find_median(test, S);
+mn = find_mean(test, S);
+max = find_maximum(test, S);
+min = find_minimum(test, S);
+printf("Median of the dataset = %d\n",med);
+printf("Mean of the dataset = %d\n",mn);
+printf("Maximum of the dataset = %d\n",max);
+printf("Minimum of the dataset = %d\n",min);
+
 }
 
-void print_array(int * ptr, int count){
-;
+void print_array(unsigned char test[], int S){
+printf("Given Dataset:\n");
+for (i=0;i<S;i++){
+printf("%d\n",test[i]);
+}
 }
 
-int find_median(int * ptr, int count){
-;
+int find_median(unsigned char test[], int S){
+int m;
+//Sorting the array in ascending order before calculating the median
+int i, j, temp;
+for (i=0;i<S;i++){
+for (j=i+1;j<S;j++){
+if (test[i]>test[j]){
+temp = test[i];
+test[i] = test[j];
+test[j] = temp;
+}
+}
 }
 
-int find_mean(int * ptr, int count){
-;
+if (S%2 != 0){
+m = test[(S+1)/2];
+}
+else{
+m = test[(((S/2)+((S+2)/2))/2)-1];
+}
+return m;
 }
 
-int find_maximum(int * ptr, int count){
-;
+int find_mean(unsigned char test[], int S){
+int avg=0;
+for (i=0;i<S;i++){
+avg = avg + test[i];
+}
+avg = avg/S;
+return avg;
 }
 
-int find_minimum(int * ptr, int count){
-;
+int find_maximum(unsigned char test[], int S){
+for (i=0;i<S;i++){
+if (test[0]<test[i]){
+test[0] = test[i];
+}
+}
+return test[0];
 }
 
-int * sort_array(int * ptr, int count){
-;
+int find_minimum(unsigned char test[], int S){
+for (i=0;i<S;i++){
+if (test[0]>test[i]){
+test[0] = test[i];
 }
+}
+return test[0];
+}
+
+unsigned char * sort_array(unsigned char test[], int S){
+int i, j, temp;
+for (i=0;i<S;i++){
+for (j=i+1;j<S;j++){
+if (test[i]<test[j]){
+temp = test[i];
+test[i] = test[j];
+test[j] = temp;
+}
+}
+}
+return test;
+}
+

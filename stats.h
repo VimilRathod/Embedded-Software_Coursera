@@ -33,7 +33,7 @@
  *     void
  */
 
-void print_statistics(int * ptr, int count);
+void print_statistics(unsigned char test[], int S);
 
 /**
  * @brief Function: print_array
@@ -46,7 +46,7 @@ void print_statistics(int * ptr, int count);
  *     void
  */
 
-void print_array(int * ptr, int count);
+void print_array(unsigned char test[], int S);
 
 /**
  * @brief Function: find_median
@@ -59,7 +59,7 @@ void print_array(int * ptr, int count);
  *     median of the numbers provided.
  */
 
-int find_median(int * ptr, int count);
+int find_median(unsigned char test[], int S);
 
 /**
  * @brief Function: find_mean
@@ -72,7 +72,7 @@ int find_median(int * ptr, int count);
  *     mean of the numbers provided.
  */
 
-int find_mean(int * ptr, int count);
+int find_mean(unsigned char test[], int S);
 
 /**
  * @brief Function: find_maximum
@@ -85,7 +85,7 @@ int find_mean(int * ptr, int count);
  *     maximum of the numbers provided.
  */
 
-int find_maximum(int * ptr, int count);
+int find_maximum(unsigned char test[], int S);
 
 /**
  * @brief Function: find_minimum
@@ -98,7 +98,7 @@ int find_maximum(int * ptr, int count);
  *     minimum of the numbers provided.
  */
 
-int find_minimum(int * ptr, int count);
+int find_minimum(unsigned char test[], int S);
 
 /**
  * @brief Function: sort_array
@@ -111,6 +111,6 @@ int find_minimum(int * ptr, int count);
  *     sorted array.
  */
 
-int * sort_array(int * ptr, int count);
+unsigned char * sort_array(unsigned char test[], int S);
 
 #endif /* __STATS_H__ */
