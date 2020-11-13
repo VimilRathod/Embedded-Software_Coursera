@@ -9,13 +9,15 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
- *
- * <Add Extended Description Here>
- *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @file stats.c 
+ * @brief Performs statistical data analysis on given dataset like finding:
+ * Median
+ * Mean
+ * Maximum
+ * Minimum
+ * Sort in descending order
+ * @author Vimil Rathod
+ * @date 12-11-2020
  *
  */
 
@@ -36,8 +38,43 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+  int i,j;
   /* Statistics and Printing Functions Go Here */
-
+  print_Statistics();
+  print_array();
+  find_median();
+  find_mean();
+  find_maximum();
+  find_minimum();
+  sort_array();
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(int * ptr, int count){
+;
+}
+
+void print_array(int * ptr, int count){
+;
+}
+
+int find_median(int * ptr, int count){
+;
+}
+
+int find_mean(int * ptr, int count){
+;
+}
+
+int find_maximum(int * ptr, int count){
+;
+}
+
+int find_minimum(int * ptr, int count){
+;
+}
+
+int * sort_array(int * ptr, int count){
+;
+}
