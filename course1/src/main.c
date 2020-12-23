@@ -20,6 +20,12 @@
  * @date April 1 2017
  *
  */
+ 
+ #ifdef COURSE1
+ 	course1();
+ #endif
+ 
+/** 
 #include "platform.h"
 #include "memory.h"
 
@@ -27,12 +33,13 @@
 char buffer[MAX_LENGTH];
 
 /* A pretty boring main file */
+/*
 int main(void) {
   unsigned int i;
   char value;
-
+*/
   /* Code below does some arbitrary memory Reads & writes */
-  clear_all(buffer, MAX_LENGTH);
+/*  clear_all(buffer, MAX_LENGTH);
   set_all( ( buffer + 8 ), 43, 2); 
   set_value(buffer, 0, 0x61);
   value = get_value(buffer, 9);
@@ -51,4 +58,5 @@ int main(void) {
   PRINTF("\n");
   return 0;
 }
+*/
 
