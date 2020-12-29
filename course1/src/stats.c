@@ -63,7 +63,7 @@ int main() {
 
 /* Add other Implementation File Code Here */
 
-void print_statistics(unsigned char test[], int S){
+/*void print_statistics(unsigned char test[], int S){
 int med, mn, max, min;
 med = find_median(test, S);
 mn = find_mean(test, S);
@@ -74,7 +74,7 @@ PRINTF("Mean of the dataset = %d\n",mn);
 PRINTF("Maximum of the dataset = %d\n",max);
 PRINTF("Minimum of the dataset = %d\n",min);
 
-}
+}*/
 
 void print_array(unsigned char test[], int S){
 
