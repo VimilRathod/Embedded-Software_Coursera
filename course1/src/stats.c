@@ -23,15 +23,18 @@
 
 
 
-#include <stdio.h>
+#include <stddef.h>
 #include "stats.h"
+#include "platform.h"
+
 
 /* Size of the Data Set */
 #define SIZE 40
 
 int i;
 
-void main() {
+/*
+int main() {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -39,23 +42,24 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  int S;
-  S = SIZE;
+*//* Other Variable Declarations Go Here */
+/* int S;
+  S = SIZE;*/
   /* Statistics and Printing Functions Go Here */
-  print_array(test, S);
-  printf("Analytical Statistics:\n");
+/*  print_array(test, S);
+  PRINTF("Analytical Statistics:\n");
   print_statistics(test, S);
   find_median(test, S);
   find_mean(test, S);
   find_maximum(test, S);
   find_minimum(test, S);
   sort_array(test, S);
-  printf("Given Dataset in Descending order:\n");
+  PRINTF("Given Dataset in Descending order:\n");
   for (i=0;i<S;i++){
-  printf("%d\n",test[i]);
+  PRINTF("%d\n",test[i]);
 }
 }
+*/
 
 /* Add other Implementation File Code Here */
 
@@ -65,19 +69,33 @@ med = find_median(test, S);
 mn = find_mean(test, S);
 max = find_maximum(test, S);
 min = find_minimum(test, S);
-printf("Median of the dataset = %d\n",med);
-printf("Mean of the dataset = %d\n",mn);
-printf("Maximum of the dataset = %d\n",max);
-printf("Minimum of the dataset = %d\n",min);
+PRINTF("Median of the dataset = %d\n",med);
+PRINTF("Mean of the dataset = %d\n",mn);
+PRINTF("Maximum of the dataset = %d\n",max);
+PRINTF("Minimum of the dataset = %d\n",min);
 
 }
 
 void print_array(unsigned char test[], int S){
-printf("Given Dataset:\n");
+
+#if !defined (VERBOSE) && defined (HOST)
+#undef PRINTF
+#define PRINTF(...)
+#endif
+
+PRINTF("Debug Printing Dataset:\n");
 for (i=0;i<S;i++){
-printf("%d\n",test[i]);
+	PRINTF("%d\t",test[i]);
 }
+PRINTF("\n");
+
+#if defined (VERBOSE) && defined (HOST)
+#undef PRINTF
+#define PRINTF(...) printf(_VA_ARGS_)
+#endif
+
 }
+
 
 int find_median(unsigned char test[], int S){
 int m;

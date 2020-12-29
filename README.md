@@ -1,2 +1,2 @@
 /* Author: Vimil Rathod
-   Project: Statistical data Analysis */
+   Project: Final Assessment - Course 1 */
